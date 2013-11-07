@@ -1,0 +1,20 @@
+<div style=" border-bottom-style:outset; border-bottom-width:1px;width:100%; position:absolute;  left:0px; top:0px; z-index:2; height:30px; background-color:#eeeeee">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <select id="lstTuyen" name="lstTuyen">
+            <%= render 'info_of_bus_routes' %>
+          </select>
+        </td>
+        <td>Lượt đi: <input type="checkbox" checked="checked" name="chckLuotDi" id="chckLuotDi"></td>
+        <td>
+          <input type="button" onclick="showRouteOfBus();" value="Hiển thị lộ trình" class="button">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div style="border-style: outset; border-width: 1px; position: absolute; left: 0px; top: 30px; width: 309px; height: 365px; z-index: 2; background-color: rgb(238, 238, 238); overflow: auto;" id="divInfoOfRoute"><b>THÔNG TIN TUYẾN XE BUS</b></div>
+
+<div id="map-canvas" style="position: absolute; top: 30px; width: 1558px; left: 309px; height: 934px; z-index: 1; background-color: rgb(229, 227, 223); overflow: hidden;"></div>
