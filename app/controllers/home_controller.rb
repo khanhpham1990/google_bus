@@ -8,6 +8,5 @@ class HomeController < ApplicationController
   end
 
   def bus_routes
-    render layout: 'text_layout'
   end
 end

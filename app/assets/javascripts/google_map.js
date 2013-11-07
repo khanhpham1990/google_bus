@@ -3,13 +3,12 @@ var map;
 function initialize() {
   var mapOptions = {
     zoom: 18,
-    center: new google.maps.LatLng(10.7714015, 106.70627820000004),
+    center: new google.maps.LatLng(10.775083376600016, 106.70212596036379),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   var input = (document.getElementById('searchTextField'));
   var autocomplete = new google.maps.places.Autocomplete(input);
-
   autocomplete.bindTo('bounds', map);
 
   var infowindow = new google.maps.InfoWindow();
@@ -35,7 +34,8 @@ function initialize() {
       map.setCenter(place.geometry.location);
       map.setZoom(17);  // Why 17? Because it looks good.
     }
-    marker.setIcon(/** @type {google.maps.Icon} */({
+
+    marker.setIcon(({
       url: place.icon,
       size: new google.maps.Size(71, 71),
       origin: new google.maps.Point(0, 0),
@@ -57,7 +57,6 @@ function initialize() {
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
   });
-
   // Sets a listener on a radio button to change the filter type on Places
   // Autocomplete.
   function setupClickListener(id, types) {
@@ -72,3 +71,14 @@ function initialize() {
   setupClickListener('changetype-geocode', ['geocode']);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
+var contextMenu = $(document.createElement('ul')).attr('id', 'contextMenu');
+contextMenu.append(
+      '<li><a href="#zoomIn">Phóng to bản đồ</a></li>' +
+      '<li><a href="#zoomOut">Thu nhỏ bản đồ</a></li>' +
+      '<li><a href="#startPoint">Nơi bắt đầu đi</a></li>' +
+      '<li><a href="#endPoint">Đích đến</a></li>'
+);
+contextMenu.bind('contextmenu', function() { return false; });
+// Append it to the map object
+$(map.getDiv()).append(contextMenu);
