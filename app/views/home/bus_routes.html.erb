@@ -1,7 +1,12 @@
 <% provide(:title, "Show bus way") %>
 
 <div id="panel" style="top: 5px; margin-left: -800px; position: absolute; left: 50%; z-index: 5; background-color: #fff; padding: 5px; border: 0px solid #999;">
-  <input id="searchTextField" type="text" size="50">
+  <%= form_tag ("/bus_routes") do %>
+    <%= text_field_tag ("searchTextField") %>
+    <!-- &#38;nbsp;&#38;nbsp;to&#38;nbsp;&#38;nbsp; -->
+    <%= text_field_tag ("searchTextFieldEnd") %>
+    <%= submit_tag ("Search") %>
+  <% end %>
 </div>
 <div id="map-canvas" style="height: 100%; margin: 0px; padding: 0px"></div>
 
