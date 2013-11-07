@@ -33,6 +33,7 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (2.1.0.0)
     builder (3.1.4)
     coderay (1.0.9)
     coffee-rails (4.0.1)
@@ -137,6 +138,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   better_errors
   binding_of_caller
+  bootstrap-sass
   coffee-rails (~> 4.0.0)
   gmaps4rails
   jbuilder (~> 1.2)
