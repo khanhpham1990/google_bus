@@ -1,11 +1,13 @@
-<div id="panel" style="position: absolute; top: 5px; left: 50%; margin-left: -180px; z-index: 5; background-color: #fff; padding: 5px; border: 1px solid #999;">
-  <input id="searchTextField" type="text" size="50" style="border: 1px solid  rgba(0, 0, 0, 0.5);">
+<% provide(:title, "Show bus way") %>
+
+<div id="panel" style="top: 5px; margin-left: -800px; position: absolute; left: 50%; z-index: 5; background-color: #fff; padding: 5px; border: 0px solid #999;">
+  <input id="searchTextField" type="text" size="50">
   <input type="radio" name="type" id="changetype-all" checked="checked">
   <label for="changetype-all">All</label>
-  <input id="searchTextField" type="text" size="50">
   <input type="radio" name="type" id="changetype-establishment">
   <label for="changetype-establishment">Establishments</label>
   <input type="radio" name="type" id="changetype-geocode">
   <label for="changetype-geocode">Geocodes</label>
 </div>
 <div id="map-canvas" style="height: 100%; margin: 0px; padding: 0px"></div>
+
