@@ -24,12 +24,12 @@ $(function() {
     var choose_routes_bus = $("#lstTuyen").val();
     var choose_true_or_false = $("input#chckLuotDi").prop('checked');
 
-    $.load("http://proximobus.appspot.com/agencies/mbta/routes.js?callback=?", function(data) {
-       for (var i = 0; i < data.items.length; i++) {
-         var route = data.items[i];
-         console.log(route)
-       }
-     });
+    $.ajax({
+      url: "/bus_way",
+      data: {choose_routes_bus: choose_routes_bus, choose_true_or_false: choose_true_or_false},
+      success: function(data) {
+      }
+    });
   });
 });
 
