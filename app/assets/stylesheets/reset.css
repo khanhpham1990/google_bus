@@ -3,7 +3,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,fieldset,textarea,p,blockquote,
   margin:0;
   padding:0;
 }
-html,body {
+html {
   margin:0;
   padding:0;
   height: 100%;
@@ -16,14 +16,6 @@ fieldset,img {
   border:0;
 }
 
-/*
-input{
-  border:1px solid #b0b0b0;
-  padding:3px 5px 4px;
-  color:#979797;
-  width:40px;
-}
-*/
 address,caption,cite,code,dfn,th,var {
   font-style:normal;
   font-weight:normal;
