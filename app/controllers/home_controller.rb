@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def bus_way
+    HardWorker.perform_async
     render 'contact' if params[:choose_routes_bus].blank? && params[:choose_true_or_false].blank? and return
 
     set_coordinate_bus_routes = []
