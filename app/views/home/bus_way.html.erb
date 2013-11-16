@@ -1,58 +1,5 @@
 <% provide(:title, "Show bus routes") %>
 
-<script type="text/javascript" charset="utf-8">
-$(function(){
-  $("button#show").click(function(){
-    var content_panel = document.getElementById("show").innerHTML;
-    if (content_panel == "Show panel") {
-      $("#divInfoOfRoute").show();
-      $("#map-canvas").css("width", 1549);
-      $("#map-canvas").css("left", 309);
-      document.getElementById("show").innerHTML = "Hide panel";
-    }
-    else {
-      $("#divInfoOfRoute").hide();
-      $("#map-canvas").css("width", 1858);
-      $("#map-canvas").css("left", 0);
-      document.getElementById("show").innerHTML = "Show panel";
-    }
-  });
-});
-
-$(function() {
-  $("button#searchroutes").click(function() {
-    var choose_routes_bus = $("#lstTuyen").val();
-    var choose_true_or_false = $("input#chckLuotDi").prop('checked');
-
-    var path_way = [];
-    var latlng;
-    $.ajax({
-      url: "/bus_way",
-      data: {choose_routes_bus: choose_routes_bus, choose_true_or_false: choose_true_or_false},
-      success: function(data) {
-        var json_data = eval(data);
-        for(var i = 0; i < json_data.length; i++) {
-          if (json_data[i].split(",")[0] != '' && json_data[i].split(",")[1] != '') {
-            // path_way.push(new google.maps.LatLng(json_data[i].split(",")[1], json_data[i].split(",")[0]));
-            var marker = new google.maps.Marker({
-              position: new google.maps.LatLng(json_data[i].split(",")[1], json_data[i].split(",")[0]),
-              map: map
-            });
-          }
-        }
-      },
-      error: function(data) {
-        alert("Can't load json");
-      }
-    });
-  });
-});
-
-</script>
-
-
-
-
 <div id="map-canvas" style="position: absolute; top: 30px; width: 1549px; left: 309px; height: 934px; z-index: 1; background-color: rgb(229, 227, 223); overflow: hidden;"></div>
 <div style=" border-bottom-style:outset; border-bottom-width:1px;width:100%; position:absolute;  left:0px; top:0px; z-index:2; height:30px; background-color:#eeeeee">
   <table>
