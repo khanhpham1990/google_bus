@@ -14,6 +14,8 @@ function drawPathGoogleRoutes(choose_routes_bus, choose_true_or_false, mypath) {
 }
 
 function setMarkerCoordinateMap(choose_routes_bus, choose_true_or_false, markerList) {
+  // removeMarker();
+
   $.get("/bus_way", {choose_routes_bus: choose_routes_bus, choose_true_or_false: choose_true_or_false, flag: true},
   function(data, status) {
     if (status == "success") {
@@ -29,14 +31,21 @@ function setMarkerCoordinateMap(choose_routes_bus, choose_true_or_false, markerL
 
         var marker = new google.maps.Marker({
           position: latLngInter,
-          title: data["TABLE"][0]["ROW"][i]["COL"][0]["DATA"] + ' ' + data["TABLE"][0]["ROW"][i]["COL"][1]["DATA"] + 'District' + data["TABLE"][0]["ROW"][i]["COL"][2]["DATA"],
+          title: data["TABLE"][0]["ROW"][i]["COL"][0]["DATA"] + ' ' + data["TABLE"][0]["ROW"][i]["COL"][1]["DATA"] + ' Quận ' + data["TABLE"][0]["ROW"][i]["COL"][2]["DATA"],
           map: map
         });
         markerList.push(marker);
       }
+      console.log(markerList[0]);
       map.panTo(markerList[0].getPosition());
     }
   });
+}
+
+function removeMarker() {
+  while(markerList[0]) {
+    markerList.pop().setMap(nul);
+  }
 }
 
 $(function(){
@@ -68,6 +77,10 @@ $(function() {
     // Function remove path after redraw path
     if(mypath != null) {
       mypath.setMap(null);
+    }
+
+    while(markerList[0] != null){
+      markerList.pop().setMap(null);
     }
 
     // Function set path include stroke weight, stroke opacity and stroke color
