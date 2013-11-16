@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     end
     set_coordinate_bus_routes = @data_bus_routes.split(" ")
     respond_to do |format|
-      format.json { render :json => set_coordinate_bus_routes }
+      format.text { render :text => set_coordinate_bus_routes }
     end
   end
 

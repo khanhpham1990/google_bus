@@ -24,11 +24,25 @@ $(function() {
     var choose_routes_bus = $("#lstTuyen").val();
     var choose_true_or_false = $("input#chckLuotDi").prop('checked');
 
+    var path_way = [];
+    var latlng;
     $.ajax({
       url: "/bus_way",
       data: {choose_routes_bus: choose_routes_bus, choose_true_or_false: choose_true_or_false},
       success: function(data) {
-        alert(data);
+        var json_data = eval(data);
+        for(var i = 0; i < json_data.length; i++) {
+          if (json_data[i].split(",")[0] != '' && json_data[i].split(",")[1] != '') {
+            // path_way.push(new google.maps.LatLng(json_data[i].split(",")[1], json_data[i].split(",")[0]));
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(json_data[i].split(",")[1], json_data[i].split(",")[0]),
+              map: map
+            });
+          }
+        }
+      },
+      error: function(data) {
+        alert("Can't load json");
       }
     });
   });
