@@ -14,8 +14,10 @@ function drawPathGoogleRoutes(choose_routes_bus, choose_true_or_false, mypath) {
 }
 
 function setMarkerCoordinateMap(choose_routes_bus, choose_true_or_false, markerList) {
-
-  removeMarker(markerList);
+  // Function remove all marker in the map
+  if (markerList.length != 0) {
+    removeMarker(markerList);
+  }
 
   $.get("/bus_way", {choose_routes_bus: choose_routes_bus, choose_true_or_false: choose_true_or_false, flag: true},
   function(data, status) {
@@ -33,7 +35,8 @@ function setMarkerCoordinateMap(choose_routes_bus, choose_true_or_false, markerL
         var marker = new google.maps.Marker({
           position: latLngInter,
           title: data["TABLE"][0]["ROW"][i]["COL"][0]["DATA"] + ' ' + data["TABLE"][0]["ROW"][i]["COL"][1]["DATA"] + ' Quận ' + data["TABLE"][0]["ROW"][i]["COL"][2]["DATA"],
-          map: map
+          map: map,
+          icon: "./app/assets/images/mapicons/number_" + i + ".png"
         });
         markerList.push(marker);
       }
