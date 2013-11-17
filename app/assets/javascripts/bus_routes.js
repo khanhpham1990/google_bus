@@ -14,7 +14,8 @@ function drawPathGoogleRoutes(choose_routes_bus, choose_true_or_false, mypath) {
 }
 
 function setMarkerCoordinateMap(choose_routes_bus, choose_true_or_false, markerList) {
-  // removeMarker();
+
+  removeMarker(markerList);
 
   $.get("/bus_way", {choose_routes_bus: choose_routes_bus, choose_true_or_false: choose_true_or_false, flag: true},
   function(data, status) {
@@ -36,15 +37,14 @@ function setMarkerCoordinateMap(choose_routes_bus, choose_true_or_false, markerL
         });
         markerList.push(marker);
       }
-      console.log(markerList[0]);
       map.panTo(markerList[0].getPosition());
     }
   });
 }
 
-function removeMarker() {
+function removeMarker(markerList) {
   while(markerList[0]) {
-    markerList.pop().setMap(nul);
+    markerList.pop().setMap(null);
   }
 }
 
@@ -69,18 +69,14 @@ $(function(){
 
 $(function() {
   var mypath;
+  var markerList = []
   $("button#searchroutes").click(function() {
     var choose_routes_bus = $("#lstTuyen").val();
     var choose_true_or_false = $("input#chckLuotDi").prop('checked');
-    var markerList = []
 
     // Function remove path after redraw path
     if(mypath != null) {
       mypath.setMap(null);
-    }
-
-    while(markerList[0] != null){
-      markerList.pop().setMap(null);
     }
 
     // Function set path include stroke weight, stroke opacity and stroke color
