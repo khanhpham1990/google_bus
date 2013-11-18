@@ -51,6 +51,10 @@ function removeMarker(markerList) {
   }
 }
 
+function moveTo(lat, lng, title) {
+  map.panTo(new google.maps.LatLng(lat, lng));
+}
+
 $(function(){
   $("button#show").click(function(){
     var content_panel = document.getElementById("show").innerHTML;
@@ -97,5 +101,3 @@ $(function() {
     drawPathGoogleRoutes(choose_routes_bus, choose_true_or_false, mypath);
   });
 });
-
-

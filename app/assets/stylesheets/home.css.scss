@@ -1,3 +1,19 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.report {
+  font-size:12px;
+  font-family: Verdana;
+  background-color: #ffffff;
+  width: 360px;
+  border-bottom-width:1px;
+  border-bottom-color:Gray;
+  border-bottom-style:solid;
+}
+.report:hover {
+  background: #dadaa2;
+  font-family: Verdana;
+  width: 360px;
+  cursor: pointer;
+}
