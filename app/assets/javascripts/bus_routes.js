@@ -36,7 +36,7 @@ function setMarkerCoordinateMap(choose_routes_bus, choose_true_or_false, markerL
           position: latLngInter,
           title: data["TABLE"][0]["ROW"][i]["COL"][0]["DATA"] + ' ' + data["TABLE"][0]["ROW"][i]["COL"][1]["DATA"] + ' Quận ' + data["TABLE"][0]["ROW"][i]["COL"][2]["DATA"],
           map: map,
-          icon: "./app/assets/images/mapicons/number_" + i + ".png"
+          icon: '/assets/mapicons/number_' + i + '.png'
         });
         markerList.push(marker);
       }
