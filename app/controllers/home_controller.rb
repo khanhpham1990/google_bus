@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   layout 'google_map'
   def index
+    return render 'index', layout: 'application'
   end
 
   def bus_way

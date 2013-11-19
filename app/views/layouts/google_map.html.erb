@@ -6,7 +6,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative CSS3 Animation Menus" />
     <meta name="keywords" content="menu, navigation, animation, transition, transform, rotate, css3, web design, component, icon, slide" />
     <meta name="author" content="Codrops" />
     <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css' />
@@ -14,8 +13,15 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqAmcqQTrwsmAIpTcqMQQIeA9v85YrQOU&sensor=true&libraries=places">
     </script>
     <%= favicon_link_tag "/favicon.ico" %>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <link type="text/css" rel="stylesheet" href="/assets/context_menu.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/home.css.scss" />
+    <script src="assets/google_map.js"></script>
+    <script src="assets/jquery-2.0.3.min.js"></script>
+    <script src="assets/jquery-ui.js"></script>
+    <script src="assets/jscoord-1.1.1.js"></script>
+    <script src="assets/bus_routes.js"></script>
+    <script src="assets/bootstrap.js"></script>
     <%= csrf_meta_tags %>
   </head>
 
