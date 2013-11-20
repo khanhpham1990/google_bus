@@ -6,7 +6,7 @@ class HomeController < ApplicationController
 
   def bus_way
     HardWorker.perform_async
-    render 'contact' if params[:choose_routes_bus].blank? && params[:choose_true_or_false].blank? and return
+    render 'bus_way' if params[:choose_routes_bus].blank? && params[:choose_true_or_false].blank? and return
 
     select_routes = params[:choose_routes_bus]
     checked_true_or_false = params[:choose_true_or_false]
@@ -38,6 +38,8 @@ class HomeController < ApplicationController
     end
   end
 
+  # Action process choose two point start and destination random in google map, after find bus way following the shortest
   def bus_routes
+    return render 'bus_routes', layout: 'bus_routes'
   end
 end

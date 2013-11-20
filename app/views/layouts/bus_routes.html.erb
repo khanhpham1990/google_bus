@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <meta charset="utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css' />
+    <%= favicon_link_tag "/favicon.ico" %>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqAmcqQTrwsmAIpTcqMQQIeA9v85YrQOU&sensor=true&libraries=places">
+    </script>
+    <link type="text/css" rel="stylesheet" href="/assets/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/bus_routes.css" />
+    <script src="assets/google_map.js"></script>
+    <script src="assets/jquery-2.0.3.min.js"></script>
+    <script src="assets/jquery-ui.js"></script>
+    <script src="assets/jscoord-1.1.1.js"></script>
+    <script src="assets/bus_way.js"></script>
+    <script src="assets/bootstrap.js"></script>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+  <%= yield %>
+  </body>
+</html>
