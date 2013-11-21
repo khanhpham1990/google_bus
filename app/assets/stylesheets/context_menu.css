@@ -1,15 +1,15 @@
 #contextMenu {
-	position: absolute;
-	min-width: 100px;
-	z-index: 1000;
-	background: #fff;
-	border-top: solid 1px #CCC;
-	border-left: solid 1px #CCC;
-	border-bottom: solid 1px #676767;
-	border-right: solid 1px #676767;
-	padding: 0px;
-	margin: 0px;
-	display:none;
+  position: absolute;
+  min-width: 100px;
+  z-index: 1000;
+  background: #fff;
+  border-top: solid 1px #CCC;
+  border-left: solid 1px #CCC;
+  border-bottom: solid 1px #676767;
+  border-right: solid 1px #676767;
+  padding: 0px;
+  margin: 0px;
+  display:none;
 }
 
 #contextMenu a {
