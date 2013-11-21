@@ -9,8 +9,6 @@ function initialize() {
   }
   map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
 
-
-
   var directionsRendererOptions = {};
   var directionsRenderer = new google.maps.DirectionsRenderer(directionsRendererOptions);
   var directionsService = new google.maps.DirectionsService();
@@ -42,14 +40,13 @@ function initialize() {
     contextMenu.show(mouseEvent.latLng);
   });
   //
-  markerOptions.icon = 'http://www.google.com/intl/en_ALL/mapfiles/markerA.png';
+  markerOptions.icon = 'assets/start_end/start.png';
   markerOptions.map = null;
   markerOptions.position = new google.maps.LatLng(0, 0);
   markerOptions.title = 'Điểm bắt đầu';
-  //
   var originMarker = new google.maps.Marker(markerOptions);
   //
-  markerOptions.icon = 'http://www.google.com/intl/en_ALL/mapfiles/markerB.png';
+  markerOptions.icon = 'assets/start_end/exit_1.png';
   markerOptions.title = 'Điểm kết thúc';
   var destinationMarker = new google.maps.Marker(markerOptions);
   //
