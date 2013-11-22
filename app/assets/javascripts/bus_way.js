@@ -3,11 +3,18 @@ var map;
 function initialize() {
   var saigon = new google.maps.LatLng(10.775083376600016, 106.70212596036379);
   var mapOptions = {
-    zoom: 18,
+    zoom: 17,
     center: saigon,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
   map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+
+
+  // Function autocomplete input start
+  autoCompleteStart(map);
+
+  // Function autocomplete input end
+  autoCompleteEnd(map);
 
   var directionsRendererOptions = {};
   var directionsRenderer = new google.maps.DirectionsRenderer(directionsRendererOptions);
@@ -54,6 +61,7 @@ function initialize() {
   google.maps.event.addListener(contextMenu, 'menu_item_selected', function(latLng, eventName){
     switch(eventName){
       case 'directions_origin_click':
+        getStationNearestWithPositionStart(latLng);             // call function return coordinate nearest with position lat long start
         originMarker.setPosition(latLng);
       if(!originMarker.getMap()){
         originMarker.setMap(map);
@@ -61,6 +69,7 @@ function initialize() {
       break;
       case 'directions_destination_click':
         destinationMarker.setPosition(latLng);
+        getStationNearestWithPositionEnd(latLng);              // call function return coordinate nearest with position lat long end
       if(!destinationMarker.getMap()){
         destinationMarker.setMap(map);
       }
@@ -109,3 +118,72 @@ function initialize() {
   });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
+// Function get coordinate station nearest with position start
+function getStationNearestWithPositionStart(latLng) {
+  var distance = 100;
+  $.get("/getStationNearest", {latitude: latLng.lat(), longtitude: latLng.lng(), distance: distance}, function(data, status) {
+    console.log(data);
+  });
+}
+
+
+// Function get coordinate station nearest with position end
+function getStationNearestWithPositionEnd(latLng) {
+  var distance = 100;
+  $.get("/getStationNearest", {latitude: latLng.lat(), longtitude: latLng.lng(), distance: distance}, function(data, status) {
+  });
+}
+
+function autoCompleteStart(map) {
+  var input = document.getElementById('pac-input');
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  var autocomplete = new google.maps.places.Autocomplete(input);
+  autocomplete.bindTo('bounds', map);
+  var infowindow = new google.maps.InfoWindow();
+  var marker = new google.maps.Marker({
+    map: map
+  });
+  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+    infowindow.close();
+    marker.setVisible(false);
+    var place = autocomplete.getPlace();
+    console.log(place);
+    if (!place.geometry) {
+      return;
+    }
+    // If the place has a geometry, then present it on a map.
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);
+    }
+    marker.setIcon(({
+      url: place.icon,
+      size: new google.maps.Size(71, 71),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(17, 34),
+      scaledSize: new google.maps.Size(35, 35)
+    }));
+
+    marker.setPosition(place.geometry.location);
+    marker.setVisible(true);
+    var address = '';
+    if (place.address_components) {
+      address = [
+        (place.address_components[0] && place.address_components[0].short_name || ''),
+        (place.address_components[1] && place.address_components[1].short_name || ''),
+        (place.address_components[2] && place.address_components[2].short_name || '')
+      ].join(' ');
+      console.log(address);
+    }
+    //
+    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+    infowindow.open(map, marker);
+  });
+}
+
+function autoCompleteEnd(map) {
+}

@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  include HomeHelper
   layout 'google_map'
   def index
     return render 'index', layout: 'application'
@@ -16,9 +17,9 @@ class HomeController < ApplicationController
       set_coordinate_bus_routes = []
       @data_bus_routes = ""
       if checked_true_or_false == true
-        @data_bus_routes = File.read(Rails.root.to_s + "/db/data_maps/getAllRoutes/true/GetFullRoute_true#{select_routes.to_i}.txt")
+        @data_bus_routes = read_file_routes(select_routes, checked_true_or_false)
       else
-        @data_bus_routes = File.read(Rails.root.to_s + "/db/data_maps/getAllRoutes/false/GetFullRoute_false#{select_routes.to_i}.txt")
+        @data_bus_routes = read_file_routes(select_routes, checked_true_or_false)
       end
       set_coordinate_bus_routes = @data_bus_routes.split(" ")
       respond_to do |format|
@@ -28,9 +29,9 @@ class HomeController < ApplicationController
     if choose_method_set_marker == "true"
       collect_coordinate_position_map = []
       if checked_true_or_false == true
-        @data_coordinate_position = File.read(Rails.root.to_s + "/db/data_maps/getAllBuses/true/GetTuyenBus_true#{select_routes.to_i}.json")
+        @data_coordinate_position = read_file_station(select_routes,checked_true_or_false)
       else
-        @data_coordinate_position = File.read(Rails.root.to_s + "/db/data_maps/getAllBuses/false/GetTuyenBus_false#{select_routes.to_i}.json")
+        @data_coordinate_position = read_file_station(select_routes, checked_true_or_false)
       end
       respond_to do |format|
         format.json { render :json => @data_coordinate_position }
@@ -41,5 +42,12 @@ class HomeController < ApplicationController
   # Action process choose two point start and destination random in google map, after find bus way following the shortest
   def bus_routes
     return render 'bus_routes', layout: 'bus_routes'
+  end
+
+  # Action return coordinate position station nearest with position start and end
+  def getStationNearest
+    coordinate_lat = params[:lattitude].to_f
+    coordinate_lng = params[:longtitude].to_f
+    distance_input = params[:distance].to_f
   end
 end
