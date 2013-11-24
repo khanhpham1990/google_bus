@@ -145,6 +145,21 @@ function autoCompleteStart(map) {
   var marker = new google.maps.Marker({
     map: map
   });
+  call_autocomplete(marker, infowindow, autocomplete);
+}
+
+function autoCompleteEnd(map) {
+  var input = document.getElementById("end_input");
+  var autocomplete = new  google.maps.places.Autocomplete(input);
+  autocomplete.bindTo("bounds", map);
+  var infowindow = new google.maps.InfoWindow();
+  var marker = new google.maps.Marker({
+    map: map
+  });
+  call_autocomplete(marker, infowindow, autocomplete);
+}
+
+function call_autocomplete(marker, infowindow, autocomplete) {
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     infowindow.close();
     marker.setVisible(false);
@@ -177,13 +192,10 @@ function autoCompleteStart(map) {
         (place.address_components[1] && place.address_components[1].short_name || ''),
         (place.address_components[2] && place.address_components[2].short_name || '')
       ].join(' ');
-      console.log(address);
+      console.log(place.geometry.location.ob + "-" + place.geometry.location.pb);
     }
     //
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
   });
-}
-
-function autoCompleteEnd(map) {
 }
