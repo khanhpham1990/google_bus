@@ -137,8 +137,8 @@ function getStationNearestWithPositionEnd(latLng) {
 }
 
 function autoCompleteStart(map) {
-  var input = document.getElementById('pac-input');
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  var input = document.getElementById('start_input');
+  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   var autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo('bounds', map);
   var infowindow = new google.maps.InfoWindow();
