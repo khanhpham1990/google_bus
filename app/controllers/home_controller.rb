@@ -50,4 +50,8 @@ class HomeController < ApplicationController
     coordinate_lng = params[:longtitude].to_f
     distance_input = params[:distance].to_f
   end
+
+  def about_us
+
+  end
 end
