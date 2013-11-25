@@ -38,6 +38,7 @@ gem 'binding_of_caller'
 gem 'thin'
 gem 'pry'
 gem 'gmaps4rails'
+gem "typhoeus"
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
