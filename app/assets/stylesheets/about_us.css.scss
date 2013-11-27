@@ -27,6 +27,26 @@ body {
   overflow: hidden;
 }
 
+
+nav ul {
+  position: relative;
+  margin-left: 136px;
+  top: 36px;
+  list-style-type: none;
+}
+nav ul li a {
+  font-family: "adelle-1","adelle-2";
+  font-size: 22px;
+  font-weight: bold;
+  position: absolute;
+}
+nav ul li a {color: #969fa1;}
+nav ul li a:hover {color: #6d7577;}
+a#nav_about {
+  left: 135px;
+  z-index: 1900;
+}
+
 #about {
   position: absolute;
   width: 850px;
