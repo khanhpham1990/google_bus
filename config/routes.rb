@@ -9,6 +9,8 @@ GoogleBus::Application.routes.draw do
   match 'bus_routes' => 'home#bus_routes', via: [:post, :get]
 
   match 'getStationNearest' => 'home#getStationNearest', via: [:post, :get]
+
+  match 'aboutus' => 'home#about_us', via: [:post, :get]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

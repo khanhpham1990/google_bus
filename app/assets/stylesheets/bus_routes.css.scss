@@ -31,6 +31,27 @@
 }
 
 
+// css for input limit busroutes change
+#limit_input {
+  background-color: #fff;
+  padding: 0 11px 0 13px;
+  width: 70px;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  border-radius: 0.6em;
+}
+#limit_input:focus {
+  border-color: #4d90fe;
+  margin-left: -1px;
+  font-family: Roboto;
+  padding-left: 14px;  /* Regular padding-left + 1. */
+  width: 70px;
+  border-radius: 0.6em;
+}
+
+
 // css for panel
 #panel {
   position: absolute;
@@ -41,7 +62,7 @@
   // background-color: #fff;
   padding: 8px;
   border: 1px solid #999;
-  width: 1110px;
+  width: 1320px;
   height: 60px;
 }
 

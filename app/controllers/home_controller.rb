@@ -53,6 +53,6 @@ class HomeController < ApplicationController
   end
 
   def about_us
-
+    return render 'about_us', layout: 'tp_about_us'
   end
 end
