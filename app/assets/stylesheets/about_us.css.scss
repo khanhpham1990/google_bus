@@ -123,7 +123,7 @@ p.bar {
 .illustrator {width: 70%;}
 .pool {width: 86%;}
 .html {width: 78%;}
-.javascript {width: 55%;}
+.javascript {width: 65%;}
 
 p.percent {
   font-size: 17px;
@@ -133,7 +133,7 @@ p.percent {
 p.measure {
   clear: both;
   font-size: 16px;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   letter-spacing: .02em;
 }
 #contact {
@@ -158,7 +158,7 @@ p.measure {
   height: 40px;
 }
 #contact ul li#email {
-  // background: url(images/sprites.png) no-repeat -80px -291px;
+  background: url(assets/icon/e_mail.ico);
   left: 0;
 }
 #contact ul li#twitter {
