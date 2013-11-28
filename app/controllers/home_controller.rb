@@ -7,6 +7,7 @@ class HomeController < ApplicationController
 
   def bus_way
     HardWorker.perform_async
+    # HardWorker.perform_at(12.weeks.from_now)
     render 'bus_way' if params[:choose_routes_bus].blank? && params[:choose_true_or_false].blank? and return
 
     select_routes = params[:choose_routes_bus]

@@ -176,7 +176,7 @@ function call_autocomplete(marker, infowindow, autocomplete) {
       map.setZoom(17);
     }
     marker.setIcon(({
-      url: place.icon,
+      url: 'assets/start_end/start.png',
       size: new google.maps.Size(71, 71),
       origin: new google.maps.Point(0, 0),
       anchor: new google.maps.Point(17, 34),
