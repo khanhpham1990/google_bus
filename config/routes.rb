@@ -1,4 +1,6 @@
 GoogleBus::Application.routes.draw do
+  get "contacts/new"
+  get "contacts/create"
   # get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -11,6 +13,8 @@ GoogleBus::Application.routes.draw do
   match 'getStationNearest' => 'home#getStationNearest', via: [:post, :get]
 
   match 'aboutus' => 'home#about_us', via: [:post, :get]
+  match 'contact' => 'contacts#new', via: [:post, :get]
+  match 'contact' => 'contacts#create', via: [:post, :get]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,7 +1,6 @@
 <% provide(:title, "Home page") %>
 <div class="container">
   <div class="header">
-    <!-- <a href="http://tympanus.net/Tutorials/BlurMenu/"><strong>&#38;laquo; Previous Demo: </strong>Blur Menu</a> -->
     <span class="right">
       <a href="http://www.justbenicestudio.com/studio/websymbols/" target="_blank">Đăng nhập</a>
       <a href="http://tympanus.net/codrops/2011/10/24/creative-css3-animation-menus/"><strong>English</strong></a>
@@ -46,7 +45,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a id="go" rel="leanModal" name="signup" href="#signup">
           <span class="ca-icon">K</span>
           <div class="ca-content">
             <h2 class="ca-main">Gửi phản hồi</h2>
@@ -55,4 +54,43 @@
       </li>
     </ul>
   </div><!-- content -->
+</div>
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+  $('a[rel*=leanModal]').leanModal({ top : 200, closeButton: ".modal_close" });
+});
+</script>
+
+
+
+<div id="signup">
+  <div id="signup-ct">
+    <div id="signup-header">
+      <h2>Create a new account</h2>
+      <p>It's simple, and free.</p>
+      <a class="modal_close" href="#"></a>
+    </div>
+
+    <form action="">
+
+      <div class="txt-fld">
+        <label for="">Username</label>
+        <input id="" class="good_input" name="" type="text" />
+
+      </div>
+      <div class="txt-fld">
+        <label for="">Email address</label>
+        <input id="" name="" type="text" />
+      </div>
+      <div class="txt-fld">
+        <label for="">Password</label>
+        <input id="" name="" type="text" />
+
+      </div>
+      <div class="btn-fld">
+        <button type="submit">Sign Up &raquo;</button>
+      </div>
+    </form>
+  </div>
 </div>

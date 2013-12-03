@@ -1,0 +1,29 @@
+<div id="container">
+  <h1>Trang Thông Tin Liên Hệ</h1>
+  Nếu có bất cứ vấn đề gì, vui lòng điền vào form bên duới, tôi sẽ phản hồi lại trong thời gian sớm nhất.
+  <%= form_for @contact,:url => contact_path, :html => {id: 'form3'} do |f| %>
+    <h3><span>Contact Us</span></h3>
+  <fieldset><legend>Contact form</legend>
+    <p class="first">
+    <%= f.label :name, "Họ tên" %>
+    <%= f.text_field :name, size: 30 %>
+    </p>
+    <p>
+    <%= f.label :email, "Email" %>
+    <%= f.text_field :email, size: 30 %>
+    </p>
+    <p>
+    <%= f.label :address, "Địa chỉ" %>
+    <%= f.text_field :address, size: 30 %>
+    </p>
+  </fieldset>
+  <fieldset class="last">
+    <p>
+    <%= f.label :message, "Nội dung" %>
+    <%= f.text_area :message, size: "30x10" %>
+    </p>
+  </fieldset>
+  <p class="submit"><button type="submit">Send</button></p>
+  <% end %>
+  Cám ơn bạn đã sử dụng dịch vụ của tôi, nếu bạn có bất cứ thắc mắc hay có vấn đề gì với dịch vụ này thì xin vui lòng liên hệ qua số điện thoại: 01217698526 hoặc liên lạc với tôi qua địa chỉ sau: 413/36 - Quốc lộ 50 - Phuờng 5 - Quận 8 - TP.Hồ Chí Minh
+</div>
