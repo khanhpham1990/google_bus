@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(params[:message])
-    binding.pry
+    render 'new' if params[:contact].blank?
+    @contact = Contact.new(params[:contact])
   end
 end

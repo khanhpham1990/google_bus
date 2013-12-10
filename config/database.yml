@@ -29,11 +29,20 @@ test:
   password: root
   socket: /var/run/mysqld/mysqld.sock
 
+# production:
+#   adapter: mysql2
+#   encoding: utf8
+#   database: google_bus_production
+#   pool: 5
+#   username: root
+#   password: root
+#   socket: /var/run/mysqld/mysqld.socket
+#
+#
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   database: google_bus_production
   pool: 5
   username: root
   password: root
-  socket: /var/run/mysqld/mysqld.sock

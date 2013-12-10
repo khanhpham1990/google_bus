@@ -14,7 +14,7 @@ GoogleBus::Application.routes.draw do
 
   match 'aboutus' => 'home#about_us', via: [:post, :get]
   match 'contact' => 'contacts#new', via: [:post, :get]
-  match 'contact' => 'contacts#create', via: [:post, :get]
+  match 'done' => 'contacts#create', via: [:post, :get]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
