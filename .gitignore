@@ -36,3 +36,5 @@ config/initializers/secret_token.rb
 *.swp
 .gitignore
 Gemfile.lock
+Gemfile
+config/database.yml

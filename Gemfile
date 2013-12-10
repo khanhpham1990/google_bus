@@ -41,10 +41,8 @@ gem 'gmaps4rails'
 gem "typhoeus"
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+gem 'pg'
+gem 'rails_12factor'
 # Use unicorn as the app server
 # gem 'unicorn'
 
