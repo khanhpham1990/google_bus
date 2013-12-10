@@ -16,6 +16,10 @@ class Contact < MailForm::Base
     end
   end
 
+  def deliver
+    return false unless valid?
+  end
+
   def persisted?
     false
   end

@@ -1,8 +1,15 @@
 <div id="container">
   <h1>Trang Thông Tin Liên Hệ</h1>
   Nếu có bất cứ vấn đề gì, vui lòng điền vào form bên duới, tôi sẽ phản hồi lại trong thời gian sớm nhất.
-  <%= form_for @contact,:url => contact_path, :html => {id: 'form3'} do |f| %>
-    <h3><span>Contact Us</span></h3>
+  <%= form_for @contact,:url => '/done', :html => {id: 'form3'} do |f| %>
+    <% if @contact.errors.any? %>
+      <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  <h3><span>Contact Us</span></h3>
   <fieldset><legend>Contact form</legend>
     <p class="first">
     <%= f.label :name, "Họ tên" %>
