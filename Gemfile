@@ -3,9 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 # Use mysql as the database for Active Record
-gem 'mysql2'
+# gem 'mysql2'
 
-# gem 'pg'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem "mini_magick"
+# gem "mini_magick"
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem "bootstrap-sass"
@@ -34,10 +34,10 @@ group :doc do
 end
 gem "mail_form"
 gem 'sidekiq'
-gem 'better_errors'
-gem 'binding_of_caller'
+# gem 'better_errors'
+# gem 'binding_of_caller'
 gem 'thin'
-gem 'pry'
+# gem 'pry'
 gem 'gmaps4rails'
 gem "typhoeus"
 # Use ActiveModel has_secure_password
