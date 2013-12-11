@@ -43,6 +43,4 @@ production:
   adapter: postgresql
   encoding: utf8
   database: google_bus_production
-  pool: 5
   username: root
-  password: root
