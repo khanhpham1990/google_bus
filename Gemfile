@@ -40,6 +40,7 @@ gem 'thin'
 gem 'pry'
 gem 'gmaps4rails'
 gem "typhoeus"
+gem 'pony'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 # gem 'rails_12factor'

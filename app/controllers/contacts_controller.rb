@@ -5,7 +5,12 @@ class ContactsController < ApplicationController
   end
 
   def create
-    render 'new' if params[:contact].blank?
     @contact = Contact.new(params[:contact])
+
+    if @contact.deliver
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 end
