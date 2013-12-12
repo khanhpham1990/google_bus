@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 # Use mysql as the database for Active Record
-# gem 'mysql2'
+gem 'mysql2'
 
 gem 'pg'
 # Use SCSS for stylesheets
@@ -32,12 +32,17 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+group :development do
+  gem 'mysql2'
+  gem 'pry'
+end
+
 gem "mail_form"
 gem 'sidekiq'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'thin'
-gem 'pry'
 gem 'gmaps4rails'
 gem "typhoeus"
 gem 'pony'

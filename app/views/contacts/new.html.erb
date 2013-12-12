@@ -9,21 +9,21 @@
   <p class="first">
     <%= @my_erros[:name] unless @my_erros[:name].blank? %>
     <%= f.label :name, "Họ tên" %>
-    <%= f.text_field :name, size: 30, placeholder: "Input your name" %>
+    <%= f.text_field :name, size: 30 %>
     </p>
     <p>
     <%= f.label :email, "Email" %>
-    <%= f.text_field :email, size: 30, placeholder: "Input your email" %>
+    <%= f.text_field :email, size: 30 %>
     </p>
     <p>
     <%= f.label :address, "Địa chỉ" %>
-    <%= f.text_field :address, size: 30, placeholder: "Input your address" %>
+    <%= f.text_field :address, size: 30 %>
     </p>
   </fieldset>
   <fieldset class="last">
     <p>
     <%= f.label :message, "Nội dung" %>
-    <%= f.text_area :message, size: "30x10", placeholder: "Input your message" %>
+    <%= f.text_area :message, size: "30x10" %>
     </p>
   </fieldset>
   <p class="submit"><button type="submit">Send</button></p>
@@ -32,12 +32,30 @@
 </div>
 
 <script type="text/javascript" charset="utf-8">
-  $(function() {
-    $("input").keydown(function() {
-      $("input").css("background-color", "red");
-    });
-    $("input").keyup(function() {
-      $("input").css("background-color", "white");
-    });
+  // $(function() {
+  //   $("input").keydown(function() {
+  //     $("input").css("background-color", "red");
+  //   });
+  //   $("input").keyup(function() {
+  //     $("input").css("background-color", "white");
+  //   });
+// });
+
+  $("#contact_name").qtip({
+    content: "Please input your name here",
+    style: {
+      width: 200,
+      padding: 5,
+      background: '#A2D959',
+      color: 'black',
+      textAlign: 'center',
+      border: {
+        width: 7,
+        radius: 5,
+        color: '#A2D959'
+      },
+      tip: 'bottomLeft',
+      name: 'dark'
+    }
   });
 </script>
