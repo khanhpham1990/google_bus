@@ -41,6 +41,6 @@ test:
 #
 production:
   adapter: postgresql
-  encoding: utf8
+  encoding: unicode
   database: google_bus_production
   username: root
