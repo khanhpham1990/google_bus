@@ -1,36 +1,43 @@
 <div id="container">
   <h1>Trang Thông Tin Liên Hệ</h1>
   Nếu có bất cứ vấn đề gì, vui lòng điền vào form bên duới, tôi sẽ phản hồi lại trong thời gian sớm nhất.
-  <%= form_for @contact,:url => '/done', :html => {id: 'form3'} do |f| %>
-    <% if @contact.errors.any? %>
-      <ul>
-        <% @contact.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-      <% end %>
-      </ul>
-    <% end %>
+  <%= form_for @contact, :html => {id: 'form3'} do |f| %>
   <h3><span>Contact Us</span></h3>
+  <% @my_erros = @contact.errors.messages %>
+
   <fieldset><legend>Contact form</legend>
-    <p class="first">
+  <p class="first">
+    <%= @my_erros[:name] unless @my_erros[:name].blank? %>
     <%= f.label :name, "Họ tên" %>
-    <%= f.text_field :name, size: 30 %>
+    <%= f.text_field :name, size: 30, placeholder: "Input your name" %>
     </p>
     <p>
     <%= f.label :email, "Email" %>
-    <%= f.text_field :email, size: 30 %>
+    <%= f.text_field :email, size: 30, placeholder: "Input your email" %>
     </p>
     <p>
     <%= f.label :address, "Địa chỉ" %>
-    <%= f.text_field :address, size: 30 %>
+    <%= f.text_field :address, size: 30, placeholder: "Input your address" %>
     </p>
   </fieldset>
   <fieldset class="last">
     <p>
     <%= f.label :message, "Nội dung" %>
-    <%= f.text_area :message, size: "30x10" %>
+    <%= f.text_area :message, size: "30x10", placeholder: "Input your message" %>
     </p>
   </fieldset>
   <p class="submit"><button type="submit">Send</button></p>
-  <% end %>
+<% end %>
   Cám ơn bạn đã sử dụng dịch vụ của tôi, nếu bạn có bất cứ thắc mắc hay có vấn đề gì với dịch vụ này thì xin vui lòng liên hệ qua số điện thoại: 01217698526 hoặc liên lạc với tôi qua địa chỉ sau: 413/36 - Quốc lộ 50 - Phuờng 5 - Quận 8 - TP.Hồ Chí Minh
 </div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    $("input").keydown(function() {
+      $("input").css("background-color", "red");
+    });
+    $("input").keyup(function() {
+      $("input").css("background-color", "white");
+    });
+  });
+</script>

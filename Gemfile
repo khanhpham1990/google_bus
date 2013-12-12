@@ -34,15 +34,16 @@ group :doc do
 end
 gem "mail_form"
 gem 'sidekiq'
-# gem 'better_errors'
-# gem 'binding_of_caller'
+gem 'better_errors'
+gem 'binding_of_caller'
 gem 'thin'
-# gem 'pry'
+gem 'pry'
 gem 'gmaps4rails'
 gem "typhoeus"
+gem 'pony'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
-# gem 'rails_12factor'
+gem 'rails_12factor'
 # Use unicorn as the app server
 # gem 'unicorn'
 

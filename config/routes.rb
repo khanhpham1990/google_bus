@@ -7,14 +7,16 @@ GoogleBus::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-  match 'bus_way' => 'home#bus_way', via: [:post, :get]
+  get 'bus_way' => 'home#bus_way'
   match 'bus_routes' => 'home#bus_routes', via: [:post, :get]
 
   match 'getStationNearest' => 'home#getStationNearest', via: [:post, :get]
 
-  match 'aboutus' => 'home#about_us', via: [:post, :get]
-  match 'contact' => 'contacts#new', via: [:post, :get]
-  match 'done' => 'contacts#create', via: [:post, :get]
+  get 'aboutus' => 'home#about_us'
+  resources :contacts, :only => [:new, :create] do
+    get 'done', :on => :collection
+  end
+  get '/contact' => 'contacts#new'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
