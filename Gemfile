@@ -50,6 +50,8 @@ gem 'pony'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'rails_12factor'
 gem "pqueue"
+gem 'devise'
+gem 'rails_admin'
 # Use unicorn as the app server
 # gem 'unicorn'
 
