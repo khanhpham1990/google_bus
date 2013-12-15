@@ -81,6 +81,7 @@ GEM
     polyglot (0.3.3)
     pony (1.5.1)
       mail (>= 2.0)
+    pqueue (2.0.2)
     pry (0.9.12.4)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -178,6 +179,7 @@ DEPENDENCIES
   mysql2
   pg
   pony
+  pqueue
   pry
   rails (= 4.0.0)
   rails_12factor

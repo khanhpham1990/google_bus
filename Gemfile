@@ -49,6 +49,7 @@ gem 'pony'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'rails_12factor'
+gem "pqueue"
 # Use unicorn as the app server
 # gem 'unicorn'
 
