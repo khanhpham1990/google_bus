@@ -1,9 +1,8 @@
 GoogleBus::Application.routes.draw do
-  get "contacts/new"
-  get "contacts/create"
-  # get "home/index"
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+
 
   # You can have the root of your site routed with "root"
   root 'home#index'
