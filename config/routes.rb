@@ -1,4 +1,5 @@
 GoogleBus::Application.routes.draw do
+  get "admins/index"
   get "contacts/new"
   get "contacts/create"
   # get "home/index"
@@ -17,6 +18,8 @@ GoogleBus::Application.routes.draw do
     get 'done', :on => :collection
   end
   get '/contact' => 'contacts#new'
+
+  get '/adminitrator', to: 'admins#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
