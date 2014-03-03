@@ -16,12 +16,13 @@
     <link type="text/css" rel="stylesheet" href="/assets/context_menu.css" />
     <link type="text/css" rel="stylesheet" href="/assets/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="/assets/home.css.scss" />
-    <script src="assets/google_map.js"></script>
-    <script src="assets/jquery-2.0.3.min.js"></script>
-    <script src="assets/jquery-ui.js"></script>
-    <script src="assets/jscoord-1.1.1.js"></script>
-    <script src="assets/bus_routes.js"></script>
-    <script src="assets/bootstrap.js"></script>
+
+    <%= javascript_include_tag("google_map.js", media: "all", "data-turbolinks-track" => true) %>
+    <%= javascript_include_tag("bus_routes.js", media: "all", "data-turbolinks-track" => true) %>
+    <%= javascript_include_tag("jquery-2.0.3.min.js", media: "all", "data-turbolinks-track" => true) %>
+    <%= javascript_include_tag("jquery-ui.js", media: "all", "data-turbolinks-track" => true) %>
+    <%= javascript_include_tag("jscoord-1.1.1.js", media: "all", "data-turbolinks-track" => true) %>
+    <%= javascript_include_tag("library/bootstrap.js", media: "all", "data-turbolinks-track" => true) %>
     <%= csrf_meta_tags %>
   </head>
 
