@@ -59,6 +59,7 @@ gem 'rails_admin'
 group :development do
   gem 'mysql2'
 end
+gem 'newrelic_rpm'
 # Use unicorn as the app server
 # gem 'unicorn'
 
