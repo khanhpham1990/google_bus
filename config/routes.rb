@@ -20,6 +20,8 @@ GoogleBus::Application.routes.draw do
   get '/contact' => 'contacts#new'
 
   get '/adminitrator', to: 'admins#index'
+
+  get "*a", :to => "application#routing_error"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
